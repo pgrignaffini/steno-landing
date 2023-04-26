@@ -13,7 +13,7 @@ function FadeInWhenVisible({ children, className }: FadeInWhenVisibleProps) {
       whileInView="visible"
       viewport={{ once: true }}
       transition={{
-        duration: 0.5,
+        duration: 1,
         ease: "easeOut",
         type: "spring",
         delay: 0.2,
