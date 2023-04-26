@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import FirstDesc from "~/components/FirstDesc";
 import FadeInWhenVisible from "~/components/FadeInWhenVisible";
 import SecondDesc from "~/components/SecondDesc";
+import ChatBubbles from "~/components/ChatBubbles";
+import Stenobot from "~/components/Stenobot";
 
 type SectionProps = {
   children: React.ReactNode;
@@ -74,7 +76,7 @@ const Home: NextPage = () => {
           <PodcastCarousel />
           <PodcastCarousel reverse />
         </section>
-        <section className="mt-24 w-full space-y-16">
+        <section className="mt-32 w-full space-y-16">
           <div className="mx-auto w-[650px] space-y-6 text-center">
             <h2 className="text-4xl font-semibold">Lorem ipsum dolor</h2>
             <p className="text-xl text-[#93979f]">
@@ -84,7 +86,49 @@ const Home: NextPage = () => {
           </div>
           <FirstDesc />
           <SecondDesc />
+          <ChatBubbles />
         </section>
+        <FadeInWhenVisible className="mt-32 flex w-full flex-col items-center justify-center space-y-8">
+          <img
+            src="sparkle.svg"
+            alt="sparkle"
+            className="h-[68px] w-[68px] -rotate-6"
+          />
+          <h1 className="text-4xl font-semibold">Growing business?</h1>
+          <p className="text-[19px] text-[#93979f]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            <button className="rounded-2xl bg-black px-[16px] py-[10px] font-semibold text-white ">
+              Join beta
+            </button>
+          </motion.div>
+        </FadeInWhenVisible>
+
+        <FadeInWhenVisible className="mx-auto mt-24 flex h-[455px] w-full flex-col items-center justify-center space-y-6 bg-[url('/bg-rainbow.svg')] bg-contain bg-center bg-no-repeat pt-16">
+          <h1 className="text-4xl font-semibold">Get early access</h1>
+          <p className="text-[19px] text-[#93979f]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="rounded-3xl bg-gradient-to-r from-[#f10] via-[#ff00e7] via-50% to-[#00e5ff] p-[2px]">
+              <button className="rounded-3xl bg-white px-4 py-2 font-semibold text-black">
+                Join beta
+              </button>
+            </div>
+          </motion.div>
+        </FadeInWhenVisible>
+        <div className="fixed bottom-4 right-4 z-50">
+          <Stenobot />
+        </div>
       </main>
     </>
   );
